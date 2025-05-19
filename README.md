@@ -1,5 +1,20 @@
 # MEDIS - Medical Diagnosis Prediction System
 
+## Description
+MEDIS is a Medical Diagnosis Prediction System that aims to assist users in identifying potential diseases based on their symptoms. This is a team project. While the initial idea originated elsewhere, I served as the lead developer responsible for the Machine Learning, Backend, Recommendations, Database, and Configuration components.
+
+The system utilizes machine learning models and provides treatment recommendations.
+
+## Project Components
+The project consists of the following main components:
+
+-   **Frontend:** User interface for interacting with the system (developed by other team members).
+-   **Backend:** Handles API requests, server logic, and database interaction.
+-   **Machine Learning:** Contains models and scripts for disease prediction.
+-   **Recommendations:** Provides treatment and medicine recommendations.
+-   **Database:** Stores user history and other necessary data.
+-   **Configuration & Logging:** Project configuration and error logging.
+
 ## Project Structure
 ```
 MEDIS/
