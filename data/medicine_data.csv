@@ -1,0 +1,37 @@
+Disease,Medicine,Dosage,Side_Effects,Age_Group,Gender
+Common Cold,Paracetamol,500mg-1000mg every 4-6 hours,Nausea, liver problems in high doses,all,all
+Common Cold,Chlorpheniramine,4mg every 4-6 hours,Drowsiness, dry mouth,adult,all
+Common Cold,Amoxicillin,250mg-500mg three times daily,Diarrhea, allergic reactions,all,all
+Common Cold,Children's Paracetamol,10-15mg/kg every 4-6 hours,Nausea, liver problems in high doses,child,all
+Common Cold,Children's Chlorpheniramine,2mg every 4-6 hours,Drowsiness, dry mouth,child,all
+Flu,Oseltamivir,75mg twice daily for 5 days,Nausea, vomiting,adult,all
+Flu,Ibuprofen,400mg every 4-6 hours,Stomach pain, heartburn,adult,all
+Flu,Acetaminophen,500mg-1000mg every 4-6 hours,Liver problems in high doses,all,all
+Flu,Children's Oseltamivir,30-45mg twice daily for 5 days,Nausea, vomiting,child,all
+Fever,Paracetamol,500mg-1000mg every 4-6 hours,Liver problems in high doses,adult,all
+Fever,Ibuprofen,400mg every 4-6 hours,Stomach pain, heartburn,adult,all
+Fever,Children's Paracetamol,10-15mg/kg every 4-6 hours,Nausea, liver problems in high doses,child,all
+Headache,Aspirin,325mg-650mg every 4-6 hours,Stomach irritation, bleeding,adult,all
+Headache,Ibuprofen,400mg every 4-6 hours,Stomach pain, heartburn,adult,all
+Headache,Children's Ibuprofen,5-10mg/kg every 6-8 hours,Stomach pain, heartburn,child,all
+Migraine,Sumatriptan,50mg-100mg as needed,Chest pain, dizziness,adult,all
+Migraine,Propranolol,40mg-80mg twice daily,Fatigue, cold hands,adult,all
+Migraine,Children's Sumatriptan,25mg as needed,Chest pain, dizziness,teen,all
+Diabetes,Metformin,500mg-1000mg twice daily,Diarrhea, vitamin B12 deficiency,adult,all
+Diabetes,Insulin,As prescribed by doctor,Low blood sugar, weight gain,all,all
+Diabetes,Children's Insulin,As prescribed by doctor,Low blood sugar, weight gain,child,all
+Hypertension,Amlodipine,5mg-10mg once daily,Swelling, headache,adult,all
+Hypertension,Lisinopril,10mg-40mg once daily,Dry cough, dizziness,adult,all
+Hypertension,Elderly Amlodipine,2.5mg-5mg once daily,Swelling, headache,elderly,all
+Asthma,Salbutamol,2 puffs as needed,Shaking, increased heart rate,all,all
+Asthma,Fluticasone,2 puffs twice daily,Thrush, hoarseness,all,all
+Asthma,Children's Salbutamol,1 puff as needed,Shaking, increased heart rate,child,all
+Arthritis,Diclofenac,50mg-100mg daily,Stomach pain, kidney problems,adult,all
+Arthritis,Methotrexate,7.5mg-25mg weekly,Nausea, liver problems,adult,all
+Arthritis,Elderly Diclofenac,25mg-50mg daily,Stomach pain, kidney problems,elderly,all
+Pregnancy Related,Paracetamol,500mg-1000mg every 4-6 hours,Nausea, liver problems in high doses,adult,female
+Pregnancy Related,Folic Acid,400mcg daily,None,adult,female
+Pregnancy Related,Iron Supplements,30-60mg daily,Constipation,adult,female
+Menopause Related,HRT,As prescribed by doctor,Breast tenderness, mood changes,adult,female
+Menopause Related,Calcium Supplements,1000-1200mg daily,Constipation,adult,female
+Menopause Related,Vitamin D,800-1000 IU daily,None,adult,female 

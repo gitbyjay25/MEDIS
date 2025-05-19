@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIS - Medical Evaluation Diagnosis Intelligent System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen font-poppins">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-heartbeat text-3xl text-red-600"></i>
+                <h1 class="text-2xl font-bold text-gray-800">MEDIS</h1>
+            </div>
+            <div class="flex space-x-6">
+                <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                <a href="/prediction" class="text-gray-600 hover:text-blue-600 transition-colors">Predict</a>
+                <a href="#overview" class="text-gray-600 hover:text-blue-600 transition-colors">Overview</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                <a href="/nearby" class="text-gray-600 hover:text-blue-600 transition-colors font-semibold">Nearby Healthcare</a>
+                {% if session.get('user_id') %}
+                <a href="/auth/logout" class="text-gray-600 hover:text-blue-600 transition-colors">Logout</a>
+                {% else %}
+                <a href="/auth/login" class="text-gray-600 hover:text-blue-600 transition-colors">Login</a>
+                <a href="/auth/register" class="text-gray-600 hover:text-blue-600 transition-colors">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-br from-blue-100 to-indigo-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl font-extrabold text-blue-700 mb-4 tracking-tight">MEDIS</h1>
+                <p class="text-2xl text-blue-600 font-semibold mb-2">Medical Evaluation Diagnosis Intelligent System</p>
+                <p class="text-xl text-gray-600 mb-8">Revolutionizing Healthcare with AI-Powered Diagnosis</p>
+                <div class="flex flex-col items-center space-y-4">
+                    {% if session.get('user_id') %}
+                    <a href="/prediction" class="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all transform hover:-translate-y-0.5 text-xl font-semibold shadow-lg mt-4 inline-block">Go to Prediction Page</a>
+                    {% else %}
+                    <div class="flex justify-center space-x-4">
+                        <a href="/auth/login" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg hover:from-blue-600 hover:to-indigo-600 transition-all transform hover:-translate-y-0.5">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login
+                        </a>
+                        <a href="/auth/register" class="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all transform hover:-translate-y-0.5">
+                            <i class="fas fa-user-plus mr-2"></i>Register
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's New Section -->
+    <!-- (Remove this section to avoid duplication) -->
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Project Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">What is MEDIS?</h3>
+                        <p class="text-gray-600">MEDIS is an advanced medical diagnosis system that leverages artificial intelligence to provide accurate disease predictions based on patient symptoms. Our system helps healthcare professionals and patients make informed decisions about potential health conditions.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Key Features</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i>AI-powered disease prediction</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Symptom-based analysis</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Personalized medicine recommendations</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Age-appropriate diet plans</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Customized exercise routines</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i>User-friendly interface</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">What's New in MEDIS?</h2>
+                <!-- Original Features Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <i class="fas fa-brain text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Advanced AI</h3>
+                        <p class="text-gray-600">State-of-the-art machine learning algorithms for accurate predictions</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <i class="fas fa-user-shield text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Secure Authentication</h3>
+                        <p class="text-gray-600">Robust user authentication system for data privacy</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Real-time Analysis</h3>
+                        <p class="text-gray-600">Instant disease prediction and precaution suggestions</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <i class="fas fa-map-marker-alt text-4xl text-emerald-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Nearest Healthcare <span class="ml-2 px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs rounded-full">New</span></h3>
+                        <p class="text-gray-600">Find verified hospitals, clinics, and health centers near your location. <a href="/nearby" class="text-blue-600 underline">Try it now!</a></p>
+                    </div>
+                </div>
+
+                <!-- New Health Features Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <i class="fas fa-pills text-4xl text-purple-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Medicine Guide <span class="ml-2 px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">New</span></h3>
+                        <p class="text-gray-600">Get personalized medicine recommendations based on your symptoms and condition</p>
+                        <ul class="mt-4 space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i>Dosage information</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i>Usage instructions</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i>Side effects details</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <i class="fas fa-utensils text-4xl text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Diet Planner <span class="ml-2 px-2 py-0.5 bg-red-100 text-red-700 text-xs rounded-full">New</span></h3>
+                        <p class="text-gray-600">Customized diet recommendations to support your recovery</p>
+                        <ul class="mt-4 space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-red-500 mr-2"></i>Healthy food options</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i>Foods to avoid</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i>Meal timing tips</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <i class="fas fa-running text-4xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Exercise Plan <span class="ml-2 px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded-full">New</span></h3>
+                        <p class="text-gray-600">Safe and effective exercise recommendations for your condition</p>
+                        <ul class="mt-4 space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Activity guidelines</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Exercise duration</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Safety precautions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Contact Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Project By</h3>
+                        <p class="text-gray-600">Jagdish | Ashutosh | Bhumika | Milan</p>
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-600"><a href="mailto:jagdishbhatt584@gmail.com" class="text-blue-600 hover:text-blue-800">jagdishbhatt584@gmail.com</a></p>
+                            <p class="text-gray-600"><a href="mailto:Ashutosh.singh3468@gmail.com" class="text-blue-600 hover:text-blue-800">Ashutosh.singh3468@gmail.com</a></p>
+                            <p class="text-gray-600"><a href="mailto:joshibhumi63@gmail.com" class="text-blue-600 hover:text-blue-800">joshibhumi63@gmail.com</a></p>
+                            <p class="text-gray-600"><a href="mailto:kalkhuriyamilan48@gmail.com" class="text-blue-600 hover:text-blue-800">kalkhuriyamilan48@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Connect With Us</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jagdish-chandra-bhatt-30a340281" class="text-gray-600 hover:text-blue-600 transition-colors">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Support Section -->
+    <div id="emergency-support" class="fixed bottom-24 right-4 z-50 flex flex-col space-y-2">
+        <!-- SOS Button -->
+        <button id="sos-button" class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-4 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all flex items-center space-x-2 animate-pulse">
+            <i class="fas fa-ambulance text-2xl"></i>
+            <span class="text-xl tracking-wide">SOS</span>
+        </button>
+        
+        <!-- Emergency Modal -->
+        <div id="emergency-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center transition-all duration-300">
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform transition-all duration-300 scale-95 opacity-0" id="emergency-modal-content">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-heartbeat text-red-600 text-3xl"></i>
+                        <h2 class="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">Emergency Support</h2>
+                    </div>
+                    <button id="close-emergency-modal" class="text-gray-500 hover:text-gray-700 transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Quick Actions -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <button id="call-ambulance" class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white p-4 rounded-xl flex flex-col items-center transition-all transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-ambulance text-3xl mb-2"></i>
+                            <span class="font-semibold">Call Ambulance</span>
+                            <span class="text-xs mt-1 text-red-100">102</span>
+                        </button>
+                        <button id="emergency-contacts" class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-4 rounded-xl flex flex-col items-center transition-all transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-phone-alt text-3xl mb-2"></i>
+                            <span class="font-semibold">Emergency</span>
+                            <span class="text-xs mt-1 text-blue-100">Contacts</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Emergency Instructions -->
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl shadow-sm border border-gray-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <i class="fas fa-first-aid text-red-500 text-xl"></i>
+                            <h3 class="font-bold text-gray-800 text-lg">While Help Arrives:</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start space-x-3 text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span>Stay calm and keep the patient still</span>
+                            </li>
+                            <li class="flex items-start space-x-3 text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span>Check breathing and consciousness</span>
+                            </li>
+                            <li class="flex items-start space-x-3 text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span>Clear the area around the patient</span>
+                            </li>
+                            <li class="flex items-start space-x-3 text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span>Gather patient's medications if any</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="mb-4">&copy; 2024 MEDIS - Medical Evaluation Diagnosis Intelligent System</p>
+                <p class="text-gray-400">Project by: Jagdish | Ashutosh | Bhumika | Milan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-4 right-4 z-50">
+        <!-- Chat Button -->
+        <button id="chat-button" class="bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 transition-all">
+            <i class="fas fa-comments text-2xl"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window" class="hidden absolute bottom-16 right-0 w-96 bg-white rounded-lg shadow-xl border border-gray-200">
+            <!-- Chat Header -->
+            <div class="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-robot mr-2"></i>
+                    <h3 class="font-semibold">MEDIS Assistant</h3>
+                </div>
+                <button id="close-chat" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="p-4 h-96 overflow-y-auto">
+                <div class="mb-4">
+                    <div class="bg-blue-100 text-gray-800 rounded-lg p-3 inline-block">
+                        Hello! I'm your MEDIS Assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="border-t p-4">
+                <form id="chat-form" class="flex items-center">
+                    <input type="text" id="chat-input" 
+                           class="flex-1 border rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                           placeholder="Type your message...">
+                    <button type="submit" 
+                            class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-all">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Chat Widget Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chat-button');
+            const chatWindow = document.getElementById('chat-window');
+            const closeChat = document.getElementById('close-chat');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+            const maxRetries = 3;
+            let isProcessing = false;
+
+            // Base URL for API calls
+            const API_BASE_URL = window.location.origin;
+
+            chatButton.addEventListener('click', () => {
+                chatWindow.classList.toggle('hidden');
+                if (!chatWindow.classList.contains('hidden')) {
+                    chatInput.focus();
+                }
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatWindow.classList.add('hidden');
+            });
+
+            async function sendMessageWithRetry(message, retryCount = 0) {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/chat`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ message })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (!response.ok) {
+                        // If we get a quota error, wait longer before retry
+                        if (response.status === 429) {
+                            const waitTime = (retryCount + 1) * 2000; // Increase wait time with each retry
+                            await new Promise(resolve => setTimeout(resolve, waitTime));
+                            if (retryCount < maxRetries) {
+                                return sendMessageWithRetry(message, retryCount + 1);
+                            }
+                        }
+                        throw new Error(data.error || 'Server error');
+                    }
+
+                    return data;
+                } catch (error) {
+                    if (retryCount < maxRetries && 
+                        (error.message.includes('network') || error.message.includes('failed'))) {
+                        await new Promise(resolve => setTimeout(resolve, 1000 * (retryCount + 1)));
+                        return sendMessageWithRetry(message, retryCount + 1);
+                    }
+                    throw error;
+                }
+            }
+
+            chatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                if (isProcessing) return; // Prevent multiple submissions
+                
+                const message = chatInput.value.trim();
+                if (!message) return;
+
+                // Add user message to chat
+                addMessage(message, true);
+                chatInput.value = '';
+
+                // Show loading indicator
+                isProcessing = true;
+                const loadingMessage = addMessage('Typing...', false);
+
+                try {
+                    const data = await sendMessageWithRetry(message);
+                    loadingMessage.remove();
+                    
+                    if (data.response) {
+                        addMessage(data.response, false);
+                    } else {
+                        throw new Error('Invalid response format');
+                    }
+                } catch (error) {
+                    console.error('Chat error:', error);
+                    loadingMessage.remove();
+                    
+                    // Show user-friendly error message
+                    const errorMessage = error.message.includes('quota') 
+                        ? 'The service is temporarily busy. Please try again in a few minutes.'
+                        : error.message.includes('network') 
+                            ? 'Network error. Please check your connection and try again.'
+                            : 'Sorry, something went wrong. Please try again.';
+                    
+                    addMessage(errorMessage, false);
+                } finally {
+                    isProcessing = false;
+                }
+            });
+
+            function addMessage(message, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'mb-4 ' + (isUser ? 'text-right' : '');
+                
+                const messageContent = document.createElement('div');
+                messageContent.className = isUser 
+                    ? 'bg-blue-600 text-white rounded-lg p-3 inline-block'
+                    : 'bg-blue-100 text-gray-800 rounded-lg p-3 inline-block';
+                messageContent.textContent = message;
+
+                messageDiv.appendChild(messageContent);
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                return messageDiv;
+            }
+        });
+    </script>
+</body>
+</html> 

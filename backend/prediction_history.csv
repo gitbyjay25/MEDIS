@@ -1,0 +1,27 @@
+2025-05-15 17:54:09,headache,vomitting,body_pain,sneezing,None,None,None,None
+2025-05-15 17:54:13,headache,vomitting,body_pain,sneezing,None,None,None,None
+2025-05-15 17:54:18,headache,vomitting,body_pain,sneezing,None,None,None,None
+2025-05-15 18:03:16,vomiting,headache,sneezing,body_ache,Flu,0.2817619047619047,None,None
+2025-05-15 18:08:54,headache,sneezing,body_pain,vomiting,Migraine,0.3392222222222222,None,None
+2025-05-15 18:08:57,headache,sneezing,body_pain,vomiting,Migraine,0.3392222222222222,None,None
+2025-05-15 18:09:07,headache,sneezing,body_pain,vomiting,Migraine,0.3392222222222222,None,None
+2025-05-15 18:09:14,headache,sneezing,body_pain,vomiting,Migraine,0.3392222222222222,None,None
+2025-05-15 18:09:58,headache,sneezing,body_pain,vomiting,Migraine,0.3392222222222222,None,None
+2025-05-15 18:19:01,headache,body_pain,vomiting,sneezing,Migraine,0.29055555555555557,None,None
+2025-05-15 18:21:59,headache,nausea,sensitivity_to_light,vomiting,visual_disturbances,Migraine,0.33611111111111114,None,None
+2025-05-15 18:21:59,runny_nose,sneezing,cough,sore_throat,fatigue,Common Cold,0.5882352941176471,None,None
+2025-05-15 18:21:59,fever,body_pain,fatigue,cough,headache,chills,Flu,0.5,None,None
+2025-05-15 18:21:59,cough,chest_pain,fatigue,shortness_of_breath,fever,Bronchitis,0.3880828678368088,None,None
+2025-05-15 18:21:59,stomach_pain,nausea,vomiting,loss_of_appetite,Gastritis,0.5,None,None
+2025-05-15 18:21:59,fever,cough,chest_pain,shortness_of_breath,fatigue,sweating,Pneumonia,0.643580168853494,None,None
+2025-05-15 18:21:59,fever,cough,fatigue,loss_of_appetite,shortness_of_breath,COVID-19,0.495,None,None
+2025-05-15 18:21:59,headache,runny_nose,cough,fatigue,fever,Sinusitis,0.8125,None,None
+2025-05-15 18:21:59,headache,fever,cough,fatigue,Sinusitis,0.6430376984126982,None,None
+2025-05-15 18:21:59,nausea,vomiting,dizziness,fatigue,Migraine,0.5,None,None
+2025-05-15 18:31:36,fever,cough,body_aches,muscle_pain,Sinusitis,0.26666666666666666,None,None
+2025-05-15 18:32:33,chest_pain,Bronchitis,0.15967857142857145,None,None
+2025-05-15 18:34:04,chest_pain,breathelessness,Bronchitis,0.15967857142857145,None,None
+2025-05-15 18:34:37,chest_pain,breathelessness,nausea,fatigue,Migraine,0.15583333333333335,None,None
+2025-05-15 18:36:09,chest_pain,breathelessness,nausea,fatigue,Migraine,0.15583333333333335,None,None
+2025-05-15 18:36:25,chest_pain,breathelessness,nausea,fatigue,heatburn,Migraine,0.15583333333333335,None,None
+2025-05-15 18:37:01,chest_pain,breathelessness,nausea,fatigue,heatburn,sweating,Pneumonia,0.29774999999999996,None,None
